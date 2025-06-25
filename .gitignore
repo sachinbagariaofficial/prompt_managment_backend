@@ -1,0 +1,16 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.env
+
+# VS Code settings (optional)
+.vscode/
+
+# OS files
+.DS_Store
+
+# Render build files (optional)
+build/
