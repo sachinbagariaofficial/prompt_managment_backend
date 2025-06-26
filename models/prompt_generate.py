@@ -1,22 +1,18 @@
-import os
 from dotenv import load_dotenv
 import httpx
-import asyncio
+import os
 
 load_dotenv()
 
 API_URL = "https://router.huggingface.co/hf-inference/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions"
 
-# HF_TOKEN = os.getenv("HF_TOKEN")
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 
 headers = {
-    # "Authorization": f"Bearer {os.environ['HF_TOKEN']}",
+    "Authorization": f"Bearer {HF_TOKEN}",
     "Content-Type": "application/json",
 }
-
-
-print("6666666666")
 
 
 async def prompt_gen(payload):

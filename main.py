@@ -11,7 +11,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://prompt-managment-forntend.vercel.app"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -32,9 +32,8 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 @app.post("/")
 async def gen_ai(payload: PromptFineTune):
     try:
-
+        print("payload", payload)
         response = await prompt_gen(payload)
-        print("response", payload)
         return {
             "success": True,
             "message": "Request processed successfully",
