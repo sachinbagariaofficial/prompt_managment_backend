@@ -29,7 +29,15 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     )
 
 
-@app.post("/")
+@app.get("/")
+def check_api():
+    return {
+        "success": True,
+        "message": "Request processed successfully",
+    }
+
+
+@app.post("/prompt")
 async def gen_ai(payload: PromptFineTune):
     try:
         print("payload", payload)
