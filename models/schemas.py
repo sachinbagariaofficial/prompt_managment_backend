@@ -8,3 +8,4 @@ class PromptFineTune(BaseModel):
     top_p: float
     top_k: int
     context: str
+    tone: str
