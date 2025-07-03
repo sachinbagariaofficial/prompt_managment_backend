@@ -6,7 +6,7 @@ from .constants import tone_instructions
 
 load_dotenv()
 
-API_URL = "https://router.huggingface.co/hf-inference/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions"
+API_URL = "https://router.huggingface.co/featherless-ai/v1/chat/completions"
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 headers = {
@@ -57,7 +57,7 @@ async def prompt_gen(payload):
                 headers=headers,
                 json={
                     "messages": messages,
-                    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+                    "model": "mistralai/Mistral-7B-Instruct-v0.2",
                     "temperature": temperature,
                     "top_p": top_p,
                     "top_k": top_k,
